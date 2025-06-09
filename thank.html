@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Thank You! - Siddharth Goutam Kumar</title>
+<link rel="shortcut icon" href="./thankyou.jpg" type="image/x-icon" />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+
+  body {
+    background: #f5f7fa;
+    font-family: 'Roboto', Arial, sans-serif;
+    color: #3c4043;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .container {
+    text-align: center;
+    max-width: 600px;
+    padding: 50px 40px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgb(72 84 96 / 0.15);
+    animation: fadeIn 1.5s ease forwards;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    cursor: default;
+  }
+  .container:hover {
+    box-shadow: 0 20px 45px rgb(72 84 96 / 0.25);
+    transform: translateY(-8px);
+  }
+
+  h1 {
+    font-weight: 700;
+    font-size: 3.5rem;
+    margin-bottom: 30px;
+    color: #202124;
+    user-select: none;
+  }
+
+  .typing-container {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a73e8;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid #1a73e8;
+    width: 29ch;
+    margin: 0 auto 36px auto;
+    text-align: center;
+    display: inline-block;
+    animation-timing-function: steps(29);
+    animation-name: typing, blinkCaret;
+    animation-duration: 4s, 0.75s;
+    animation-iteration-count: infinite, infinite;
+    transition: color 0.3s ease;
+    user-select: none;
+  }
+  .typing-container:hover {
+    color: #155ab6;
+    border-color: #155ab6;
+  }
+
+  p {
+    font-size: 1.2rem;
+    color: #60656f;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+    user-select: none;
+  }
+  p:hover {
+    color: #3c4043;
+  }
+
+  a.portfolio-link {
+    display: inline-block;
+    margin-top: 36px;
+    text-decoration: none;
+    background: #1a73e8;
+    color: white;
+    padding: 16px 48px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    box-shadow: 0 5px 15px rgb(26 115 232 / 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    user-select: none;
+  }
+  a.portfolio-link:hover {
+    background: #155ab6;
+    box-shadow: 0 8px 25px rgb(21 90 182 / 0.5);
+    transform: scale(1.05);
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px);}
+    to { opacity: 1; transform: translateY(0);}
+  }
+
+  @keyframes typing {
+    0% { width: 0; }
+    90% { width: 29ch; }
+    100% { width: 0; }
+  }
+
+  @keyframes blinkCaret {
+    50% { border-color: transparent; }
+  }
+</style>
+</head>
+<body>
+  <div class="container" aria-label="Thank you container with details about Siddharth Goutam Kumar">
+    <h1>Thank You! 🎉</h1>
+    <div class="typing-container" aria-label="Siddharth Goutam Kumar">
+      Siddharth Goutam Kumar
+    </div>
+    <p><strong> Information Technology Student</strong></p>
+    <p>Passionate coder & developer specializing in full-stack web technologies.</p>
+    <p>Projects: Anugrah NextGenerationRide, Apna_Adda, Karawaan, Next_Gen_Ride.</p>
+    <a href="https://siddharthcreates.netlify.app/" class="portfolio-link" target="_blank" rel="noopener noreferrer" aria-label="Visit Siddharth's portfolio">Visit My Portfolio</a>
+  </div>
+</body>
+</html>

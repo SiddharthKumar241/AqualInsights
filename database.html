@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Resource Database</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>📊 Water Quality Database</h1><br>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Location</th>
+                <th>pH Level</th>
+                <th>Turbidity</th>
+                <th>Temperature</th>
+            </tr>
+        </thead>
+        <tbody id="database-table"></tbody>
+    </table><br>
+
+    <button onclick="window.location.href='/'">🏠 Back to Dashboard</button>
+    <button onclick="window.location.href='/analysis-page'">📈 View Analysis</button>
+    <button onclick="window.location.href='/reports'">📜 View Reports</button>
+
+    <script>
+        async function fetchDatabase() {
+            try {
+                const response = await fetch("/data");
+                const data = await response.json();
+
+                document.getElementById("database-table").innerHTML = data.map(d => 
+                    `<tr>
+                        <td>${d.location}</td>
+                        <td>${d.pH.toFixed(2)}</td>
+                        <td>${d.turbidity.toFixed(2)}</td>
+                        <td>${d.temperature}°C</td>
+                    </tr>`
+                ).join("");
+            } catch (error) {
+                console.error("Error fetching database:", error);
+            }
+        }
+        fetchDatabase();
+    </script>
+
+</body>
+</html>

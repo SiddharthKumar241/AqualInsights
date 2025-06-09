@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Quality Analysis</title>
+    <link rel="shortcut icon" href="./analysis.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>📊 Water Quality Analysis</h1><br>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Average pH</th>
+                <th>Average Turbidity</th>
+                <th>Average Temperature</th>
+            </tr>
+        </thead>
+        <tbody id="analysis-table"></tbody>
+    </table>
+<br><br>
+<div style="border:2px solid black; border-radius: 7px;">
+    <h2>🚨 Report an Issue</h2><br>
+    <form id="issue-form">
+        <input type="text" id="location" placeholder="Location" required style="background-color: rgb(176, 214, 202);">
+        <input type="text" id="issue" placeholder="Describe the issue" required style="background-color: rgb(179, 214, 202);">
+        <!-- <textarea id="issue" style="" placeholder="Describe the issue" required></textarea>&nbsp;&nbsp; -->
+        <button type="submit">Submit Issue</button>
+    </form>
+</div>
+<br><br>
+    <h2>📋 Reported Issues</h2>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <th>Location</th>
+                <th>Issue</th>
+                <th>Reported At</th>
+            </tr>
+        </thead>
+        <tbody id="reports-table"></tbody>
+    </table>
+<br><br>
+    <button onclick="window.location.href='/'">🏠 Back to Dashboard</button>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Resource Monitoring</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>💧 Water Resource Monitoring Dashboard</h1>
+    </header>
+
+    <main>
+        <section class="data-table">
+            <h2>📊 Water Quality Data</h2><br>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Location</th>
+                        <th>pH Level</th>
+                        <th>Turbidity</th>
+                        <th>Temperature</th>
+                    </tr>
+                </thead>
+                <tbody id="data-display"></tbody>
+            </table>
+        </section>
+
+        <section class="controls">
+            <button onclick="window.location.href='/database'">📋 View Full Database</button>
+            <button onclick="window.location.href='/analysis-page'">📈 View Analysis</button>
+            <button onclick="window.location.href='reports.html'">🚨 View Reported Issues</button>
+            <button onclick="window.location.href='sanitation.html'"> 🌿View Sanitation Report</button>
+            <button onclick="window.location.href='thank.html'"> 🎨 Submit Response</button>
+        </section>
+    </main>
+
+    <footer>
+        <p style="align-content: center;">© 2025 Aqua_Insights</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
