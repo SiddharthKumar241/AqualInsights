@@ -22,6 +22,10 @@ app.get("/index", (req, res) => {
 app.get("/database", (req, res) => {
     res.sendFile(path.join(__dirname, "database.html"));
 });
+app.get("/reports", (req, res) => {
+    res.sendFile(path.join(__dirname, "reports.html"));
+});
+
 
 app.get("/analysis-page", (req, res) => {
     res.sendFile(path.join(__dirname, "analysis.html"));
