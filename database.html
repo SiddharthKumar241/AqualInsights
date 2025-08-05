@@ -22,9 +22,11 @@
         <tbody id="database-table"></tbody>
     </table><br>
 
-    <button onclick="window.location.href='/'">🏠 Back to Dashboard</button>
-    <button onclick="window.location.href='/analysis-page'">📈 View Analysis</button>
-    <button onclick="window.location.href='/reports'">📜 View Reports</button>
+    <div class="controls">
+        <button onclick="window.location.href='/'">🏠 Back to Dashboard</button>
+        <button onclick="window.location.href='/analysis-page'">📈 View Analysis</button>
+        <button onclick="window.location.href='/reports'">📜 View Reports</button>
+    </div>
 
     <script>
         async function fetchDatabase() {
@@ -48,4 +50,5 @@
     </script>
 
 </body>
+
 </html>
