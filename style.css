@@ -1,4 +1,3 @@
-/* General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +5,6 @@
     font-family: Arial, sans-serif;
 }
 
-/* Body Styling */
 body {
     background: #f4f7f9;
     color: #333;
@@ -14,51 +12,97 @@ body {
     padding: 20px;
 }
 
-/* Header */
 header {
-    background:rgb(37,150,190);
+    background: linear-gradient(-45deg, #2596be, #37a9d3, #1b6ca8, #3bb0e8);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
     color: white;
     padding: 15px;
     font-size: 24px;
     font-weight: bold;
     border-radius: 8px;
+    margin-bottom: 20px;
 }
 
-/* Main Container */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 main {
     width: 90%;
     margin: auto;
     padding: 20px;
 }
 
-/* Data Table */
 .data-table {
     margin: 20px 0;
+    overflow-x: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: white;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    background: white;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    color: #333;
 }
 
 th, td {
     padding: 12px;
     border: 1px solid #ddd;
+    text-align: left;
 }
 
 th {
-    background:#2596be;
+    background: #2596be;
     color: white;
-}
-tr:hover {
-    background-color: #ddd;
+    text-transform: uppercase;
+    font-weight: 600;
 }
 
-/* Controls Section */
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr {
+    opacity: 0;
+    animation: fadeInUp 0.5s ease forwards;
+    will-change: transform, opacity;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    cursor: default;
+}
+
+tbody tr:nth-child(1) { animation-delay: 0.1s; }
+tbody tr:nth-child(2) { animation-delay: 0.2s; }
+tbody tr:nth-child(3) { animation-delay: 0.3s; }
+tbody tr:nth-child(4) { animation-delay: 0.4s; }
+tbody tr:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+tbody tr:hover {
+    background-color: #c9e6f9;
+    box-shadow: 0 0 10px 3px rgba(37, 150, 190, 0.5);
+    transform: scale(1.03);
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
 .controls {
     display: flex;
     justify-content: center;
@@ -67,6 +111,8 @@ tr:hover {
 }
 
 button {
+    position: relative;
+    overflow: hidden;
     background: #37a9d3;
     color: white;
     border: none;
@@ -74,14 +120,56 @@ button {
     font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
-    transition: 0.3s;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    animation: pulseShadow 3s infinite ease-in-out;
 }
 
 button:hover {
     background: #0056b3;
+    transform: scale(1.05);
 }
 
-/* Footer */
+button::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(0);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.5s ease, opacity 1s ease;
+    top: 50%;
+    left: 50%;
+    transform-origin: center;
+}
+
+button:active::after {
+    transform: scale(1);
+    opacity: 1;
+    transition: 0s;
+    animation: ripple 0.6s ease-out;
+    top: 50%;
+    left: 50%;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(3);
+        opacity: 0;
+    }
+}
+
+@keyframes pulseShadow {
+    0%, 100% {
+        box-shadow: 0 0 10px rgba(55, 169, 211, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(55, 169, 211, 1);
+    }
+}
+
 footer {
     margin-top: 20px;
     background: #333;
@@ -89,6 +177,7 @@ footer {
     padding: 10px;
     border-radius: 5px;
 }
+
 @media (max-width: 1024px) {
     header {
         font-size: 20px;
@@ -153,11 +242,16 @@ footer {
 
     .controls {
         width: 100%;
+        flex-direction: column;
+        gap: 15px;
     }
 
     button {
         font-size: 14px;
         padding: 10px;
+        width: 100%;
+        max-width: none;
+        margin: 0;
     }
 
     footer {
